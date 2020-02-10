@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 366617286}
   - component: {fileID: 366617289}
   - component: {fileID: 366617288}
+  - component: {fileID: 366617290}
   m_Layer: 0
   m_Name: Gunter
   m_TagString: Untagged
@@ -278,6 +279,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.23, y: 0.34}
   m_Direction: 0
+--- !u!50 &366617290
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366617285}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,11 +390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2601733025125461353, guid: 9be3908ba37bf2048ac9880a7ad3fe15,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2565278669637660788, guid: 9be3908ba37bf2048ac9880a7ad3fe15,
         type: 3}
       propertyPath: m_Name
@@ -387,6 +404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601733025125461353, guid: 9be3908ba37bf2048ac9880a7ad3fe15,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2565278669637660789, guid: 9be3908ba37bf2048ac9880a7ad3fe15,
         type: 3}

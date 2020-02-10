@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 734252654854150332}
   - component: {fileID: 734252654854150333}
   - component: {fileID: 734252654854150330}
-  - component: {fileID: 734252654854150331}
+  - component: {fileID: 1367880106863186719}
   m_Layer: 0
   m_Name: Finn
   m_TagString: Player
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 768633703
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -8431832634542125973, guid: e2828a89c20429a4d87552c94c6c1462,
     type: 3}
@@ -171,7 +171,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &734252654854150331
+--- !u!114 &1367880106863186719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,10 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 734252654854150328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45d2b72bae897df44985977e7ee7bd7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ea7b4d15cdc5a847bf8afb1e7b92121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.7
-  punch: {fileID: 6390821299232534597, guid: 2df3936505cb45c4a81435a83d1054f3, type: 3}
-  punchSpawnPoint: {fileID: 734252654281538694}
-  jumpPower: 3
+  dataModel: {fileID: 11400000, guid: c4f1e40638e2eb944b6c4769725da18e, type: 2}

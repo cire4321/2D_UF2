@@ -90,8 +90,6 @@ public class OnGroundState : CharacterState
         base.OnTriggerExit(collision);
     }
 
-    
-
     public override void CheckTransitions()
     {
         if (ladderPos != LadderPos.NONE)
@@ -102,6 +100,4 @@ public class OnGroundState : CharacterState
         if (rb2D.Cast(new Vector2(0, -1), hitResults, 0.1f) == 0)
             finn.ChangeState(new JumpingState(finn));
     }
-
-
 }

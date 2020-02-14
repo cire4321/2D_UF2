@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Chucheland.unity
+- path: Assets/Scenes/IceKingdom.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

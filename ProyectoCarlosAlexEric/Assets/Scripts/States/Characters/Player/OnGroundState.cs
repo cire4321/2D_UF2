@@ -20,7 +20,7 @@ public class OnGroundState : CharacterState
 
     public override void OnInit()
     {
-        ator.SetBool("jumping", false);
+        ator.SetBool("Grounded", true);
         ladderPos = LadderPos.NONE;
 
         base.OnInit();
@@ -37,7 +37,25 @@ public class OnGroundState : CharacterState
         ator.SetFloat("speedFactor", Mathf.Abs(h));
 
         if (Input.GetButtonDown("Jump"))
+        {
             rb2D.AddForce(new Vector2(0, 1) * finn.dataModel.verticalImpulse, ForceMode2D.Impulse);
+            ator.SetTrigger("Jump");
+        }
+
+        if (Input.GetButtonDown("Fire3"))
+        {
+            ator.SetTrigger("Roll");
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            ator.SetTrigger("Smash");
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            ator.SetTrigger("Hit");
+        }
     }
 
     public override void FixedExecute()
@@ -82,6 +100,4 @@ public class OnGroundState : CharacterState
         if (rb2D.Cast(new Vector2(0, -1), hitResults, 0.1f) == 0)
             finn.ChangeState(new JumpingState(finn));
     }
-
-
 }

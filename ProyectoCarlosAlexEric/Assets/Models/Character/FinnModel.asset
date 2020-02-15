@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FinnModel
   m_EditorClassIdentifier: 
   description: 
-  horizontalSpeed: 1
-  verticalImpulse: 3
-  horizontalSpeedAirFactor: 0.5
+  horizontalSpeed: 5
+  verticalImpulse: 8
+  horizontalSpeedAirFactor: 0.8
   ladderSpeed: 0.3

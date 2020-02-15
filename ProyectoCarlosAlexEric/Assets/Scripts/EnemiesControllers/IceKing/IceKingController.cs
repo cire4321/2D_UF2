@@ -6,7 +6,6 @@ public class IceKingController : MonoBehaviour
 {
     public float speed = 3f;
     public Transform finn;
-    public Transform camera;
 
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -31,8 +30,6 @@ public class IceKingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posCamX = camera.position.x;
-        posCamY = camera.position.y;
         target1 = new Vector2(posCamX + 3.5f, 2f);
         target2 = new Vector2(posCamX - 3.5f ,2f);
         timer -= Time.deltaTime;

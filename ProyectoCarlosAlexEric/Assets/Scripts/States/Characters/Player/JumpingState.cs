@@ -27,6 +27,11 @@ public class JumpingState : CharacterState
     public override void FixedExecute()
     {
         rb2D.velocity = new Vector2(h * finn.dataModel.horizontalSpeed * finn.dataModel.horizontalSpeedAirFactor, rb2D.velocity.y);
+
+        if (h > 0)
+            rb2D.transform.rotation = Quaternion.AngleAxis(0, new Vector2(0, 1));
+        if (h < 0)
+            rb2D.transform.rotation = Quaternion.AngleAxis(180, new Vector2(0, 1));
     }
 
     public override void CheckTransitions()

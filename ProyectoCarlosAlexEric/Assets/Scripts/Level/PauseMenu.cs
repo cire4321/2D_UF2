@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private Button[] buttons;
+    public GameObject container;
 
+    private Button[] buttons;
+    
     private void Start()
     {
         buttons = GetComponentsInChildren<Button>();
@@ -20,7 +22,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetButtonDown("Pause"))
         {
             ShowMenu(true);
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
     }
 
@@ -33,7 +35,7 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 
     private void ShowMenu(bool show)
@@ -41,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         foreach (Button button in buttons)
         {
             button.gameObject.SetActive(show);
+            container.gameObject.SetActive(show);
         }
     }
 }

@@ -38,7 +38,7 @@ public class BossController : MonoBehaviour
             timerLoop -= Time.deltaTime;
 
             anim.SetTrigger("Init");
-            anim.SetTrigger("Loop");
+            
 
             if (timerLoop <= 0)
             {

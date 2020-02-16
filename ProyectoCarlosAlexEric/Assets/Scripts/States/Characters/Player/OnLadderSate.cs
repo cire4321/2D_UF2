@@ -19,7 +19,7 @@ public class OnLadderState : OnGroundState
 
     public override void OnInit()
     {
-
+        ator.SetBool("Grounded", false);
     }
 
     public override void OnExit()

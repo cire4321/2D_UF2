@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: b6f2d41a15f242d4e95426360052dab0
+  - enabled: 1
+    path: Assets/Scenes/Candyland.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/IceKingdom.unity
+    guid: 8a83a97723612034bb6b98e3c175eb4a
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: 44ef78408c4f0174aaf1633b197fddcd
   m_configObjects: {}

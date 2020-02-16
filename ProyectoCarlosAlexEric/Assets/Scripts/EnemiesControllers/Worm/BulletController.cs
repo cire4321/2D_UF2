@@ -7,8 +7,6 @@ public class BulletController : MonoBehaviour
     public float speed;
     public float timer;
 
-    public WormController worm;
-
     private Rigidbody2D rb2d;     
 
     void Start()

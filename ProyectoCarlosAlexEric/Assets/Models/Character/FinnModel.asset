@@ -15,5 +15,5 @@ MonoBehaviour:
   description: 
   horizontalSpeed: 1
   verticalImpulse: 3
-  horizontalSpeedAirFactor: 0.5
+  horizontalSpeedAirFactor: 0.8
   ladderSpeed: 0.3

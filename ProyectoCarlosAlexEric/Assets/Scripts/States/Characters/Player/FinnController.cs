@@ -52,5 +52,14 @@ public class FinnController : MonoBehaviour
             currentState.OnInit();
         }
     }
+
+    /**/
+    public void TakeDamage(float damage)
+    {
+        float HP = 100;
+        HP -= damage;
+        Debug.Log("ouch");
+    }
+    /**/
 }
 

@@ -42,7 +42,7 @@ public class BSpawnerController : MonoBehaviour
         FacePlayer();
         if (attacking && canShoot)
         {
-            Shoot();
+            worm.anim.SetTrigger("attacking");
         }
 
 
@@ -77,7 +77,7 @@ public class BSpawnerController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0);
     }
 
-    private void Shoot()
+    public void Shoot()
     {
             Instantiate(bullet, transform.position, rotation);
             canShoot = false;

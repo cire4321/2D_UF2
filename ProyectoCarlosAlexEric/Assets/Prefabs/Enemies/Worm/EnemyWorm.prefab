@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1923609170}
   - component: {fileID: 2601733025125461353}
   - component: {fileID: 1923609166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyWorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,10 @@ MonoBehaviour:
   speed: 1
   shootingCooldown: 1
   player: {fileID: 0}
-  bullet: {fileID: 4068163330206832152, guid: 3c80ebdf29ff198449a3a945503748ba, type: 3}
+  gun: {fileID: 0}
+  explosion: {fileID: 0}
+  distance: 0
+  anim: {fileID: 0}
 --- !u!114 &1923609166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +166,10 @@ MonoBehaviour:
   speed: 0.3
   shootingCooldown: 1
   player: {fileID: 0}
-  bullet: {fileID: 4068163330206832152, guid: 3c80ebdf29ff198449a3a945503748ba, type: 3}
+  gun: {fileID: 0}
+  explosion: {fileID: 0}
+  distance: 0
+  anim: {fileID: 0}
 --- !u!1 &4304267800663724556
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5077126706093194405}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
@@ -188,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4304267800663724556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2565278669637660789}
@@ -204,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8531905028845007600}
   - component: {fileID: 2501098782951459006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

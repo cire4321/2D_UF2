@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 691620748929266826}
   - component: {fileID: 2024903113964583360}
   - component: {fileID: 3541510452878015640}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: WormBullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}

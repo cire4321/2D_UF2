@@ -7,46 +7,127 @@ public class GunterController : MonoBehaviour
     public float initHP;
     public float speed;
     public float perceptionRadius;
-    public float attackRadius;
+    public float attackZoneRadius;
+    public float attackTimer;
+    public float damage;
 
-    public Transform player;
+    public GameObject player;
+    public GameObject explosion;
 
 
     private float HP;
-    private bool attackng = false;
-    private bool moving = false;
+    private float distance;
+    private float speed_;
+    private float timer;
+    private bool moving, attacking;
 
     private Rigidbody2D rb2d;
     private Animator anim;
-    
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        HP = initHP;
+        anim = GetComponent<Animator>();
+        speed_ = speed;
+        timer = attackTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckState();
+        anim.SetFloat("timer", timer);
+
+        if (timer >= 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        if(moving)
+        {
+            anim.SetTrigger("walk");
+            Move();
+        }
+
+        if(attacking && anim.GetFloat("timer") <= 0.0001)
+        {
+            anim.SetTrigger("attack");
+            Attack();
+        }
+
+        if(!moving && !attacking)
+        {
+            anim.SetTrigger("idle");
+        }
         
     }
 
     private void CheckState()
     {
+        distance = Vector3.Distance(player.transform.position, transform.position);
+
+        if(distance <= perceptionRadius && distance >= attackZoneRadius)
+        {
+            moving = true;
+            attacking = false;
+        }
+
+        if (distance < attackZoneRadius)
+        {
+            moving = false;
+            attacking = true;
+        }
+
+        if (distance > perceptionRadius)
+        {
+            moving = false;
+            attacking = false;
+        }
+        else
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                speed_ = -speed;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            if (player.transform.position.x > transform.position.x)
+            {
+                speed_ = speed;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
 
     }
+
+    private void Move()
+    {
+        rb2d.velocity = new Vector2(speed_, rb2d.velocity.y);
+    }
+
+    private void Attack()
+    {
+        if(timer <= 0)
+        {
+            player.GetComponent<FinnController>().TakeDamage(damage);
+            timer = attackTimer;
+
+        }
+    }
+
+    private void Die()
+    {
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-
-        Gizmos.DrawWireSphere(transform.position, perceptionRadius);
-
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackZoneRadius);
 
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, perceptionRadius);
     }
-
 }

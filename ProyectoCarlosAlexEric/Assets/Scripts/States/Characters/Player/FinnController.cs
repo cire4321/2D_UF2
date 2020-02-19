@@ -8,12 +8,15 @@ public class FinnController : MonoBehaviour
     public Transform punchSpawner;
     public GameObject punch;
 
+
+    private float hSpeed;
+
     private CharacterState currentState;
 
     void Start()
     {
         dataModel = Instantiate(dataModel);
-
+        hSpeed = dataModel.horizontalSpeed;
         ChangeState(new OnGroundState(this));
     }
 
@@ -65,4 +68,15 @@ public class FinnController : MonoBehaviour
         Instantiate(punch, punchSpawner.position, transform.rotation);
         Debug.Log("Punch");
     }
+
+    public void Stop()
+    {
+        dataModel.horizontalSpeed = 0f;
+    }
+
+    public void Continue()
+    {
+        dataModel.horizontalSpeed = hSpeed;
+    }
+
 }

@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Metaball_liquid
   - Enemy
-  - Bolaso
   layers:
   - Default
   - TransparentFX

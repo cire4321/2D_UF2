@@ -436,15 +436,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finn
       objectReference: {fileID: 0}
+    - target: {fileID: 734252654854150328, guid: df874a1325c409342944dae8ca6d2675,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0069386
+      value: -0.143
       objectReference: {fileID: 0}
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2949277
+      value: -0.158
       objectReference: {fileID: 0}
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
@@ -490,6 +495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734252654281538695, guid: df874a1325c409342944dae8ca6d2675,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df874a1325c409342944dae8ca6d2675, type: 3}
@@ -733,6 +743,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -818,12 +829,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.24, z: -11.489999}
+  m_LocalPosition: {x: 0.04, y: 0.27, z: -11.489999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4a00440d1ac664a8fab0d98460658f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothFactor: 0.06
+  alturaCamera: 0.27
+  limitCameraIzq: 0.04
+  target: {fileID: 791092405}
 --- !u!1001 &522079808
 PrefabInstance:
   m_ObjectHideFlags: 0

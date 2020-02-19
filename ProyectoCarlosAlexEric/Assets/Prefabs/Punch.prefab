@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7340607813355257402}
   - component: {fileID: 2342333374428523718}
-  m_Layer: 0
+  - component: {fileID: 7363319570675899052}
+  m_Layer: 8
   m_Name: Punch
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,3 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   lifeSpan: 0.5
+--- !u!58 &7363319570675899052
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390821299232534597}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08

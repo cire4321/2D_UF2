@@ -412,7 +412,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 0.40495044
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -436,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310363349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: 0, z: -10}
+  m_LocalPosition: {x: -0.039, y: 0, z: -2.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -457,12 +457,12 @@ PrefabInstance:
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.3346767
+      value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5126724
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 734252654854150334, guid: df874a1325c409342944dae8ca6d2675,
         type: 3}
@@ -1014,7 +1014,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954046665}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 0.08, y: 0.08, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -1107,7 +1107,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.00023126602, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -1791,56 +1791,38 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1006297376}
     m_ColliderPaths:
-    - - X: -89675915
-        Y: -49753772
-      - X: -89675717
-        Y: -49737624
-      - X: -90304004
-        Y: -49737072
-      - X: -90303452
-        Y: -39088012
-      - X: -89675319
-        Y: -39087403
-      - X: -89674658
-        Y: 49807076
-      - X: 80195280
-        Y: 49806438
-      - X: 80194984
-        Y: -39088012
-      - X: 80823996
-        Y: -39088187
-      - X: 80824112
-        Y: -49737071
-      - X: 90844696
-        Y: -49736886
-      - X: 90844058
-        Y: 55797372
-      - X: -90158312
-        Y: 55796734
-      - X: -90158950
-        Y: 50424156
-      - X: -100324704
-        Y: 50423518
-      - X: -100324066
-        Y: -49753772
+    - - X: -7174052
+        Y: -3980301
+      - X: -7173994
+        Y: 3984566
+      - X: 6415623
+        Y: 3984537
+      - X: 6415652
+        Y: -3979001
+      - X: 7267576
+        Y: -3978972
+      - X: 7267547
+        Y: 4463789
+      - X: -7212664
+        Y: 4463760
+      - X: -7212693
+        Y: 4033932
+      - X: -8025976
+        Y: 4033903
+      - X: -8025947
+        Y: -3980301
   m_CompositePaths:
     m_Paths:
-    - - {x: -8.967594, y: -4.975377}
-      - {x: -8.967574, y: -4.9737625}
-      - {x: -9.0304, y: -4.9737043}
-      - {x: -9.030342, y: -3.9088013}
-      - {x: -8.967532, y: -3.9087377}
-      - {x: -8.9674635, y: 4.9807076}
-      - {x: 8.019528, y: 4.980641}
-      - {x: 8.019502, y: -3.9088013}
-      - {x: 8.0824, y: -3.9088216}
-      - {x: 8.082415, y: -4.973707}
-      - {x: 9.08447, y: -4.9736857}
-      - {x: 9.084403, y: 5.579737}
-      - {x: -9.015831, y: 5.5796704}
-      - {x: -9.015898, y: 5.0424156}
-      - {x: -10.032471, y: 5.042349}
-      - {x: -10.032404, y: -4.975377}
+    - - {x: -0.7174081, y: -0.3980301}
+      - {x: -0.7173965, y: 0.3984566}
+      - {x: 0.6415623, y: 0.3984508}
+      - {x: 0.6415681, y: -0.3979001}
+      - {x: 0.7267576, y: -0.3978943}
+      - {x: 0.7267518, y: 0.44637892}
+      - {x: -0.7212664, y: 0.4463731}
+      - {x: -0.72127223, y: 0.4033932}
+      - {x: -0.8025976, y: 0.4033874}
+      - {x: -0.8025918, y: -0.3980301}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.000005
 --- !u!50 &1006297375
@@ -2306,9 +2288,9 @@ GameObject:
   - component: {fileID: 1509743278}
   - component: {fileID: 1509743277}
   - component: {fileID: 1509743276}
-  - component: {fileID: 1509743279}
   - component: {fileID: 1509743280}
   - component: {fileID: 1509743281}
+  - component: {fileID: 1509743279}
   m_Layer: 0
   m_Name: IceKingBoss
   m_TagString: Untagged
@@ -2392,14 +2374,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509743275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -0.1, z: 0}
+  m_LocalPosition: {x: -0.059, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1509743279
-CircleCollider2D:
+--- !u!60 &1509743279
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2411,9 +2393,61 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  serializedVersion: 2
-  m_Radius: 1.67
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.30833334, y: 0.35333332}
+    newSize: {x: 2.05, y: 2.29}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.097500004, y: -0.005}
+      - {x: 0.112500004, y: -0.008333334}
+      - {x: 0.1225, y: -0.09}
+      - {x: 0.13083334, y: -0.10333334}
+      - {x: 0.14583334, y: -0.11}
+      - {x: 0.15416667, y: -0.093333334}
+      - {x: 0.15416667, y: -0.033333335}
+      - {x: 0.14583334, y: -0.008333334}
+      - {x: 0.13916667, y: 0}
+      - {x: 0.11416667, y: 0.026666667}
+      - {x: 0.064166665, y: 0.041666668}
+      - {x: 0.040833335, y: 0.068333335}
+      - {x: 0.04416667, y: 0.08}
+      - {x: 0.032500003, y: 0.13666667}
+      - {x: 0.020833334, y: 0.14}
+      - {x: 0.010833333, y: 0.16333334}
+      - {x: 0.0058333334, y: 0.17666668}
+      - {x: -0.0058333334, y: 0.17666668}
+      - {x: -0.009166667, y: 0.16166668}
+      - {x: -0.0175, y: 0.13666667}
+      - {x: -0.029166667, y: 0.14166667}
+      - {x: -0.045833334, y: 0.086666666}
+      - {x: -0.045833334, y: 0.061666667}
+      - {x: -0.0625, y: 0.04}
+      - {x: -0.097500004, y: 0.031666666}
+      - {x: -0.1175, y: 0.023333333}
+      - {x: -0.13916667, y: 0}
+      - {x: -0.14916667, y: -0.02}
+      - {x: -0.15416667, y: -0.031666666}
+      - {x: -0.15416667, y: -0.09833334}
+      - {x: -0.1525, y: -0.10333334}
+      - {x: -0.1375, y: -0.11}
+      - {x: -0.1225, y: -0.09}
+      - {x: -0.1225, y: -0.035}
+      - {x: -0.11416667, y: -0.008333334}
+      - {x: -0.09916667, y: -0.0033333334}
+      - {x: -0.1175, y: -0.061666667}
+      - {x: -0.11916667, y: -0.09833334}
+      - {x: -0.11916667, y: -0.17666668}
+      - {x: 0.11916667, y: -0.17666668}
+      - {x: 0.11916667, y: -0.09833334}
+      - {x: 0.11416667, y: -0.06333333}
+      - {x: 0.10583334, y: -0.026666667}
 --- !u!114 &1509743280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,7 +2631,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.00023126602, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -3509,8 +3543,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143217873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -1.3, z: 3.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.035, y: 0.046, z: 3.3}
+  m_LocalScale: {x: 0.57546824, y: 0.57546824, z: 0.57546824}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

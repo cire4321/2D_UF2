@@ -5,9 +5,11 @@ using UnityEngine;
 public class FinnController : MonoBehaviour
 {
     public FinnModel dataModel;
+    public Transform punchSpawner;
+    public GameObject punch;
 
     private CharacterState currentState;
-    
+
     void Start()
     {
         dataModel = Instantiate(dataModel);
@@ -57,5 +59,10 @@ public class FinnController : MonoBehaviour
     {
 
     }
-}
 
+    public void Attack()
+    {
+        Instantiate(punch, punchSpawner.position, transform.rotation);
+        Debug.Log("Punch");
+    }
+}

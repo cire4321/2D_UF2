@@ -21,6 +21,9 @@ public class PunchController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);//En caso de colision con otro collider antes de que se agote el tiempo de vida, se activa el trigger del colider de este gameObject y se destruye
+        if (collision.tag == "Enemy")
+        {
+            Destroy(gameObject);//En caso de colision con otro collider antes de que se agote el tiempo de vida, se activa el trigger del colider de este gameObject y se destruye
+        }
     }
 }

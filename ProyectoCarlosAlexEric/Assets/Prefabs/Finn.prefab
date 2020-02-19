@@ -184,3 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataModel: {fileID: 11400000, guid: c4f1e40638e2eb944b6c4769725da18e, type: 2}
+  punchSpawner: {fileID: 734252654281538694}
+  punch: {fileID: 6390821299232534597, guid: 2df3936505cb45c4a81435a83d1054f3, type: 3}

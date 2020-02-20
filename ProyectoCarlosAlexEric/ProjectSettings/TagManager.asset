@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Metaball_liquid
   - Enemy
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 3115606003
+    locked: 0
+  - name: Player
+    uniqueID: 2574332403
     locked: 0

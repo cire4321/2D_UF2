@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FinnController : MonoBehaviour
 {
+    public float damage;
+
     public FinnModel dataModel;
     public Transform punchSpawner;
     public GameObject punch;
@@ -11,18 +13,29 @@ public class FinnController : MonoBehaviour
 
     private float hSpeed;
 
+    private GameManager gm;
     private CharacterState currentState;
+    private Animator anim;
 
     void Start()
     {
         dataModel = Instantiate(dataModel);
         hSpeed = dataModel.horizontalSpeed;
         ChangeState(new OnGroundState(this));
+        gm = GetComponent<GameManager>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         currentState.Execute();
+
+        Debug.Log(gm.playerHealth);
+
+        if(gm.playerHealth <= 0)
+        {
+            anim.SetBool("die", true);
+        }
 
         //print(currentState);
     }
@@ -60,7 +73,9 @@ public class FinnController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-
+        Debug.Log("Hited");
+        anim.SetTrigger("hit");
+        gm.playerHealth -= damage;
     }
 
     public void Attack()

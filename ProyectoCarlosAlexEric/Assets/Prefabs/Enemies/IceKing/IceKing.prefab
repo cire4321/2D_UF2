@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5593638630517433586}
   - component: {fileID: 5529038385741511483}
   - component: {fileID: 2105766254622362929}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IceKing
   m_TagString: Enemy
   m_Icon: {fileID: 0}

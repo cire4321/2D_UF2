@@ -33,11 +33,6 @@ public class FinnController : MonoBehaviour
         SetCounter();
 
         currentState.Execute();
-
-        Debug.Log(GameManager.Instance.currentHealth);
-
-
-
         //print(currentState);
     }
 
@@ -121,10 +116,13 @@ public class FinnController : MonoBehaviour
         string sceneName = currentScene.name;
         if(sceneName == "Candyland")
         {
+            GameManager.instance.caramelo = 0;
             SceneManager.LoadScene("Candyland");
+
         }
         else if (sceneName == "IceKingdom")
         {
+            GameManager.instance.escarcha = 0;
             SceneManager.LoadScene("IceKingdom");
         }
     }

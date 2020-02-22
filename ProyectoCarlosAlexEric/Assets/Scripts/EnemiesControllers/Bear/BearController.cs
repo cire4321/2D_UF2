@@ -32,8 +32,6 @@ public class BearController : MonoBehaviour
             transform.localScale = new Vector3(scala.x, scala.y, scala.z);
         }
 
-        Debug.Log(health);
-
         if (health <= 0)
         {
             anim.SetTrigger("die");

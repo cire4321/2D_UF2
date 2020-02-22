@@ -9,6 +9,8 @@ TagManager:
   - Attack
   - LifeBar
   - Bullet
+  - Candy
+  - Escarcha
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Enemy
   - Map
   - Bullet
-  - 
+  - Collectible
   - 
   - 
   - 

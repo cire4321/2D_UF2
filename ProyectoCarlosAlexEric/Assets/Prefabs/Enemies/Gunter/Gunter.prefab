@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6176070645252863974}
   - component: {fileID: 6176070645252863975}
   - component: {fileID: 6176070645252863969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gunter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,6 +158,5 @@ MonoBehaviour:
   attackZoneRadius: 0.15
   attackTimer: 2
   damage: 1
-  player: {fileID: 0}
   explosion: {fileID: 9119985043510337152, guid: 5d2e11d6ddd1cce4ebacb9d55ab9f12e,
     type: 3}

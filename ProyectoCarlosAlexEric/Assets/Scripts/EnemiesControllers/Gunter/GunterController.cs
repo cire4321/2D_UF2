@@ -110,7 +110,6 @@ public class GunterController : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("attacking");
         player.GetComponent<FinnController>().TakeDamage(damage);
         timer = attackTimer;
     }
@@ -124,7 +123,6 @@ public class GunterController : MonoBehaviour
 
     private void TakeDamage(float dmg)
     {
-        Debug.Log("takedamage");
         HP -= dmg;
 
         if (HP <= 0)

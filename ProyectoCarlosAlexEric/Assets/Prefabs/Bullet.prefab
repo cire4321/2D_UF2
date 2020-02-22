@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2024903113964583360}
   - component: {fileID: 3541510452878015640}
   m_Layer: 11
-  m_Name: WormBullets
-  m_TagString: Untagged
+  m_Name: Bullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   timer: 2
-  worm: {fileID: 2601733025125461353, guid: 9be3908ba37bf2048ac9880a7ad3fe15, type: 3}
+  damage: 1
 --- !u!58 &3541510452878015640
 CircleCollider2D:
   m_ObjectHideFlags: 0

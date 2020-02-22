@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FinnController : MonoBehaviour
 {
@@ -10,10 +12,11 @@ public class FinnController : MonoBehaviour
     public Transform punchSpawner;
     public GameObject punch;
 
+    public Text muerteTxt, carameloTxt , escarchaTxt;
+
 
     private float hSpeed;
 
-    private GameManager gm;
     private CharacterState currentState;
     private Animator anim;
 
@@ -22,20 +25,18 @@ public class FinnController : MonoBehaviour
         dataModel = Instantiate(dataModel);
         hSpeed = dataModel.horizontalSpeed;
         ChangeState(new OnGroundState(this));
-        gm = GetComponent<GameManager>();
         anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        SetCounter();
+
         currentState.Execute();
 
-        Debug.Log(gm.playerHealth);
+        Debug.Log(GameManager.Instance.currentHealth);
 
-        if(gm.playerHealth <= 0)
-        {
-            anim.SetBool("die", true);
-        }
+
 
         //print(currentState);
     }
@@ -71,17 +72,24 @@ public class FinnController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float dmg)
     {
-        Debug.Log("Hited");
+
+        GameManager.Instance.currentHealth -= dmg;
+
+        if (GameManager.Instance.currentHealth <= 0)
+        {
+            GameManager.Instance.currentHealth = 0;
+            anim.SetBool("die", true);
+        }
+
         anim.SetTrigger("hit");
-        gm.playerHealth -= damage;
+
     }
 
     public void Attack()
     {
         Instantiate(punch, punchSpawner.position, transform.rotation);
-        Debug.Log("Punch");
     }
 
     public void Stop()
@@ -92,6 +100,50 @@ public class FinnController : MonoBehaviour
     public void Continue()
     {
         dataModel.horizontalSpeed = hSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            float dmg = collision.gameObject.GetComponent<BulletController>().damage;
+            TakeDamage(dmg);
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("die finn");
+
+        GameManager.Instance.currentHealth = GameManager.Instance.maxHealth;
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if(sceneName == "Candyland")
+        {
+            SceneManager.LoadScene("Candyland");
+        }
+        else if (sceneName == "IceKingdom")
+        {
+            SceneManager.LoadScene("IceKingdom");
+        }
+    }
+    
+    private void SetCounter()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        muerteTxt.text = GameManager.Instance.muerte.ToString();
+
+        if (sceneName == "Candyland")
+        {
+            carameloTxt.text = GameManager.Instance.caramelo.ToString();
+        }
+        else if (sceneName == "IceKingdom")
+        {
+            escarchaTxt.text = GameManager.Instance.escarcha.ToString();
+        }
     }
 
 }

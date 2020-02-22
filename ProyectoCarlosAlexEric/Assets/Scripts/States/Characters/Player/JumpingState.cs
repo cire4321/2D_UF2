@@ -6,22 +6,27 @@ public class JumpingState : CharacterState
 {
     private float h;
     private Rigidbody2D rb2D;
-    private Animator ator;
+    private Animator anim;
 
     public JumpingState(FinnController f) : base(f)
     {
         rb2D = finn.GetComponent<Rigidbody2D>();
-        ator = finn.GetComponent<Animator>();
+        anim = finn.GetComponent<Animator>();
     }
 
     public override void OnInit()
     {
-        ator.SetBool("Grounded", false);
+        anim.SetBool("Grounded", false);
         base.OnInit();
     }
     public override void Execute()
     {
         h = Input.GetAxis("Horizontal");
+
+        if(Input.GetButtonDown("Fire2"))
+        {
+            anim.SetTrigger("Up");
+        }
     }
 
     public override void FixedExecute()

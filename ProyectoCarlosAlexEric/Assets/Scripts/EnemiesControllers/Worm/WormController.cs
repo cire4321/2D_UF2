@@ -45,13 +45,7 @@ public class WormController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Bolaso"))
-        {
-            HP--;
-        }
-    }
+
 
     private void CheckState()
     {
@@ -106,7 +100,26 @@ public class WormController : MonoBehaviour
     private void Die()
     {
         Instantiate(explosion, transform.position, transform.rotation);
+        GameManager.Instance.AddMuerte();
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            float dmg = collision.gameObject.GetComponent<PunchController>().damage;
+
+            TakeDamage(dmg);
+
+        }
+    }
+
+    private void TakeDamage(float dmg)
+    {
+        //HP -= dmg;
+        //Debug.Log(dmg);
+        anim.SetTrigger("die");
     }
 
 }

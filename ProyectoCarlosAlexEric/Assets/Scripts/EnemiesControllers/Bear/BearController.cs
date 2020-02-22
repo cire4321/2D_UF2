@@ -33,6 +33,7 @@ public class BearController : MonoBehaviour
         }
 
         Debug.Log(health);
+
         if (health <= 0)
         {
             anim.SetTrigger("die");
@@ -41,7 +42,7 @@ public class BearController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Attack")
+        if(collision.gameObject.CompareTag("Attack"))
         {
             TakeDamage();
         }
@@ -77,5 +78,7 @@ public class BearController : MonoBehaviour
                 Destroy(comp);
             }
         }
+
+        GameManager.Instance.AddMuerte();
     }
 }

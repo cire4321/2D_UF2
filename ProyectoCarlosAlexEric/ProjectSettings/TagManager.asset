@@ -7,6 +7,8 @@ TagManager:
   - Metaball_liquid
   - Enemy
   - Attack
+  - LifeBar
+  - Bullet
   layers:
   - Default
   - TransparentFX

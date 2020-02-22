@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject container;
+    public GameObject transp;
+    public Image img;
 
+    private RawImage rI;
     private Button[] buttons;
-    
+
     private void Start()
     {
         buttons = GetComponentsInChildren<Button>();
+        rI = GetComponentInChildren<RawImage>();
+
         ShowMenu(false);
     }
 
@@ -43,8 +47,10 @@ public class PauseMenu : MonoBehaviour
         foreach (Button button in buttons)
         {
             button.gameObject.SetActive(show);
-            container.gameObject.SetActive(show);
-
         }
+
+        transp.gameObject.SetActive(show);
+        rI.gameObject.SetActive(show);
+        img.gameObject.SetActive(show);
     }
 }

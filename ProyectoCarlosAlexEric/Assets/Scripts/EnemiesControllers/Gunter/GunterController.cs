@@ -11,7 +11,7 @@ public class GunterController : MonoBehaviour
     public float attackTimer;
     public float damage;
 
-    public GameObject player;
+
     public GameObject explosion;
 
 
@@ -22,6 +22,7 @@ public class GunterController : MonoBehaviour
     private bool moving, attacking;
 
     private Rigidbody2D rb2d;
+    private GameObject player;
     private Animator anim;
 
     // Start is called before the first frame update
@@ -31,26 +32,27 @@ public class GunterController : MonoBehaviour
         anim = GetComponent<Animator>();
         speed_ = speed;
         timer = attackTimer;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckState();
-        anim.SetFloat("timer", timer);
 
         if (timer >= 0)
         {
             timer -= Time.deltaTime;
+
         }
 
-        if(moving)
+        if (moving)
         {
             anim.SetTrigger("walk");
             Move();
         }
 
-        if(attacking && anim.GetFloat("timer") <= 0.0001)
+        if(attacking && timer <= 0)
         {
             anim.SetTrigger("attack");
             Attack();
@@ -66,6 +68,7 @@ public class GunterController : MonoBehaviour
     private void CheckState()
     {
         distance = Vector3.Distance(player.transform.position, transform.position);
+
 
         if(distance <= perceptionRadius && distance >= attackZoneRadius)
         {
@@ -107,18 +110,27 @@ public class GunterController : MonoBehaviour
 
     private void Attack()
     {
-        if(timer <= 0)
-        {
-            player.GetComponent<FinnController>().TakeDamage(damage);
-            timer = attackTimer;
-
-        }
+        Debug.Log("attacking");
+        player.GetComponent<FinnController>().TakeDamage(damage);
+        timer = attackTimer;
     }
 
     private void Die()
     {
         Instantiate(explosion, transform.position, transform.rotation);
+        GameManager.Instance.AddMuerte();
         Destroy(gameObject);
+    }
+
+    private void TakeDamage(float dmg)
+    {
+        Debug.Log("takedamage");
+        HP -= dmg;
+
+        if (HP <= 0)
+        {
+            anim.SetTrigger("die");
+        }
     }
 
 
@@ -129,5 +141,13 @@ public class GunterController : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, perceptionRadius);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Attack"))
+        {
+            TakeDamage(collision.gameObject.GetComponent<PunchController>().damage);
+        }
     }
 }
